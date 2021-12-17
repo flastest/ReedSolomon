@@ -62,16 +62,6 @@ byte_err (int err, int loc, unsigned char *dst)
   dst[loc] ^= err;
 }
 
-/* Pass in location of error (first byte position is
-   labeled starting at 1, not 0), and the codeword.
-*/
-void
-byte_erasure (int loc, unsigned char dst[], int cwsize, int erasures[]) 
-{
-  printf("Erasure at loc %d, data %#x\n", loc, dst[loc-1]);
-  dst[loc] = 0;
-}
-
 
 int
 main (int argc, char *argv[])
@@ -98,13 +88,6 @@ main (int argc, char *argv[])
 #define ML (sizeof (msg) + NPAR)
 
 
-#if 0
-  /* Add one error and two erasures */
-  byte_err(0x35, 3, codeword);
-
-  byte_err(0x23, 17, codeword);
-  byte_err(0x34, 19, codeword);
-#endif
 
   int errors_to_insert = 1;
   if (argc > 1) {
@@ -119,13 +102,6 @@ main (int argc, char *argv[])
 
   printf("with some errors: \"%s\"\n", codeword);
 
-#if 0
-  /* We need to indicate the position of the erasures.  Eraseure
-     positions are indexed (1 based) from the end of the message... */
-
-  erasures[nerasures++] = ML-17;
-  erasures[nerasures++] = ML-19;
-#endif
 
   /* Now decode -- encoded codeword size must be passed */
   decode_data(codeword, ML);
