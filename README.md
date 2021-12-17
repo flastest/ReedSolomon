@@ -20,9 +20,15 @@ other copies of the file.
 
 ## Reed Solomon
 
-Reed Solomon is an algorithm that 
+Reed Solomon is an algorithm that aims to correct errors, but without having to save copious amounts of additional data in the form of copies of a 
+file on your storage device. In the end, data is split into a set amount of shards that mostly store original data, but some will contain parity 
+shards that we use to check to make sure the data isn't corrupt.  I will refer to a complete collection of original data shards and their respective
+parity shards as a chunk of data. 
 
-### Parity Checks
+
+### Parity Shards
+
+The number of parity shards varies based on the number of shards they will do parity for. 
 
 ### Galois Fields
 
@@ -33,11 +39,13 @@ modulo eight at the end.
 
 ### Matrix multiplication
 
+To decode, we use matrix multiplication to multiply our chunk by another matrix. 
 
 
 ### References
 https://courses.cs.duke.edu//spring10/cps296.3/rs_scribe.pdf
 https://en.wikiversity.org/wiki/Reed%E2%80%93Solomon_codes_for_coders
 https://github.com/Backblaze/JavaReedSolomon
+https://www.backblaze.com/blog/reed-solomon/
 
 
