@@ -25,10 +25,18 @@ file on your storage device. In the end, data is split into a set amount of shar
 shards that we use to check to make sure the data isn't corrupt.  I will refer to a complete collection of original data shards and their respective
 parity shards as a chunk of data. 
 
+This is what a potential chunk of encoded Reed Solomonized data might look like:
+
+| data | data | data |
+|--|--|--|
+| data | data | data |
+| data | data | data |
+| parity | parity | parity |
 
 ### Parity Shards
 
-The number of parity shards varies based on the number of shards they will do parity for. 
+The number of parity shards varies based on the number of shards they will do parity for. We generate this chunk by multiplying an encoding matrix
+by 
 
 ### Galois Fields
 
