@@ -56,10 +56,20 @@ data matrix 'A'.  We multiply E by A to get our Reed Solomonized chunk of data, 
 Given EA = R, we also have A = R * E<sup>-1</sup>. So we can use R and E<sup>-1</sup> to reconstruct A.
 
 
-## My implementation
+## 'My' 'Implementation'
 
-I used code from Henry Minsky who licensed this under the GNU General Public License. I totally lost it while trying to make this, but at least I
-can try to explain this open source Reed Solomon implementation.
+I borrow code from Henry Minsky who licensed this under the GNU General Public License. I totally lost it while trying to make this, but at least I
+can try to explain this open source Reed-Solomon implementation. I am dying inside. I DON'T CLAIM TO HAVE WRITTEN THIS CODE! I am on the verge of
+a catastrophic mental breakdown so I just want to get some credit for explaining someone else's implentation since I can't write my own.
+
+I made experiment.cc in the likeness of Henry Minsky's example.c, where the only difference is that experiment will flip random bits to emulate
+what actually happens in a computer when we need to use Reed Solomon. 
+
+Henry's encode_data function in rs.c takes a msg to be encoded, the number of bytes in msg, and a dst location for the encoded data to go. We need to
+do synthetic polynomial division within the Galois field (hence the gmult) to get pBytes, the parity bytes that are used to encode in the build_codeword
+function. Then we build the codeword, and we're done encoding!! 🎉🎉🎉 This is the best I've felt all day.
+
+Decoding is a lot harder though, it's like a 5 step function from what I recall in my reading. Let's see how Henry does it.
 
 
 
