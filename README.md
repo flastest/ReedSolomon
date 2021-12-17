@@ -1,7 +1,7 @@
 # Reed Solomon
 ### Ariel Flaster 
 #### CSCI 421
-David, my heart is broken and I just wanna graduate
+
 
 ## Errors in their natural habitat
 
