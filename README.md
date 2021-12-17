@@ -55,8 +55,11 @@ data matrix 'A'.
 
 ### References
 https://courses.cs.duke.edu//spring10/cps296.3/rs_scribe.pdf
+
 https://en.wikiversity.org/wiki/Reed%E2%80%93Solomon_codes_for_coders
+
 https://github.com/Backblaze/JavaReedSolomon
+
 https://www.backblaze.com/blog/reed-solomon/
 
 
