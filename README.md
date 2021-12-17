@@ -69,7 +69,17 @@ Henry's encode_data function in rs.c takes a msg to be encoded, the number of by
 do synthetic polynomial division within the Galois field (hence the gmult) to get pBytes, the parity bytes that are used to encode in the build_codeword
 function. Then we build the codeword, and we're done encoding!! 🎉🎉🎉 This is the best I've felt all day.
 
-Decoding is a lot harder though, it's like a 5 step function from what I recall in my reading. Let's see how Henry does it.
+Decoding is a lot harder though, it's like a whole lot more intense from what I recall in my researching. Let's see how Henry does it. First, we need to 
+calculate a syndromes polynomial which will tell us which characters have been flipped. We calculate this syndromes polynomial in the decode_data function. 
+Then we use the check_syndrome function to see if and where errors lie. Once we've done that, in experiment.cc, we correct_errors_erasures which is defined 
+in berlekamp.c. This code is giving me slight spaghetti vibes. So we use Berlekamp-Massey to compute locator and evaluator polynomials that will tell us
+which exact characters are messed up, and to what degree they're messed up, respectively. Together, we compute a magnitude polynomial that we can subtract
+from the possibly corrupted data to give us the data we intended. I don't compliment math often, but math can sometimes be beautiful. 
+
+
+## Results
+
+
 
 
 
