@@ -49,8 +49,9 @@ through seven, and then you just need to modulo eight at the end to ensure it st
 
 ### Matrix multiplication
 
-To encode and decode, we use matrix multiplication to multiply our chunk by another matrix. Lets call our encoding matrix 'E' and our original 
-data matrix 'A'. 
+To decode, we use matrix multiplication to multiply our chunk by another matrix. Lets call our encoding matrix 'E' and our original 
+data matrix 'A'.  We multiply E by A to get our Reed Solomonized chunk of data, which I'll call R. E is invertible, so E * E<sup>-1</sup> = I. 
+Given EA = R, we also have A = R * E<sup>-1</sup>. So we can use R and E<sup>-1</sup> to reconstruct A.
 
 
 ### References
