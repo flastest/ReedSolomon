@@ -64,6 +64,8 @@ can try to explain this open source Reed Solomon implementation.
 
 
 ### References
+Henry Minsky (hqm@alum.mit.edu) 1991-2009
+
 https://courses.cs.duke.edu//spring10/cps296.3/rs_scribe.pdf
 
 https://en.wikiversity.org/wiki/Reed%E2%80%93Solomon_codes_for_coders
