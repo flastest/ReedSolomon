@@ -79,9 +79,19 @@ from the possibly corrupted data to give us the data we intended. I don't compli
 
 ## Results
 
+![graph showing how good more parity bits are](RSgraph.png)
+This graph shows how the algorithm performs. `k` is the number of parity bits that encode adds when it builds a codeword for the encoding. As we can see, one 
+parity bit doesn't perform well. Even with one error inserted between encoding and decoding, with only one parity bit, we can't fix the error. However, at
+the opposite end of the spectrum, with 14 parity bits, up until 7 inserted errors, we can fix them all. Isn't that insane? That's really cool. This is 
+actually kind of cool. 
 
+However, more accuracy and parity bits come at the expense of space. We can get super accurate with messed up data if we have enough parity bits, but that
+limits the amount of stuff we can store. 
 
-
+My heart is broken now that I've completed my last school project ever. It was a tough semester, but I'm super sentimental and sad that it's over. For the first
+time in almost 20 years, I have to get ready for a new chapter in my life. 
+![it's been real](https://assets.rebelmouse.io/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8yNTg2MDc4NS9vcmlnaW4uanBnIiwiZXhwaXJlc19hdCI6MTY2MjUxMzU0M30.J4gTE1mohHasGPaDu4lJj-Uv1MchEwZ15RtKsc631zc/img.jpg?width=1245&quality=85&coordinates=0%2C0%2C0%2C0&height=700)
+it's been real, thanks
 
 ### References
 Henry Minsky (hqm@alum.mit.edu) 1991-2009
