@@ -43,13 +43,14 @@ check shards are smaller than the number of data shards we're storing. This ensu
 ### Galois Fields
 
 Galois fields are just a set of integers that can be added, multiplied, divided, you name it, but are always modded by a certain number. This is not
-at all different than what I learned a 'ring' was in other math classes. Mathematicians just want to watch everyone else suffer I guess. Our Galois
-field is just a 'ring' for the number eight. Basically, you can do any operation on any number from zero through seven, and then you just need to 
-modulo eight at the end. 
+at all different than what I learned a 'ring' was in other math classes. Mathematicians just want to watch everyone else suffer through their 
+senseless naming schemes I guess. Our Galois field is just a 'ring' for the number eight. Basically, you can multiply or add any numbers from zero 
+through seven, and then you just need to modulo eight at the end to ensure it stays in the field. 
 
 ### Matrix multiplication
 
-To encode and decode, we use matrix multiplication to multiply our chunk by another matrix. 
+To encode and decode, we use matrix multiplication to multiply our chunk by another matrix. Lets call our encoding matrix 'E' and our original 
+data matrix 'A'. 
 
 
 ### References
