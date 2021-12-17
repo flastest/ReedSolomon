@@ -44,14 +44,23 @@ check shards are smaller than the number of data shards we're storing. This ensu
 
 Galois fields are just a set of integers that can be added, multiplied, divided, you name it, but are always modded by a certain number. This is not
 at all different than what I learned a 'ring' was in other math classes. Mathematicians just want to watch everyone else suffer through their 
-senseless naming schemes I guess. Our Galois field is just a 'ring' for the number eight. Basically, you can multiply or add any numbers from zero 
+senseless naming schemes I guess. Our Galois field is for the number eight. Basically, you can multiply or add any numbers from zero 
 through seven, and then you just need to modulo eight at the end to ensure it stays in the field. 
+
+This is used in Reed Solomon because all the polynomials are in a Galois field.
 
 ### Matrix multiplication
 
 To decode, we use matrix multiplication to multiply our chunk by another matrix. Lets call our encoding matrix 'E' and our original 
 data matrix 'A'.  We multiply E by A to get our Reed Solomonized chunk of data, which I'll call R. E is invertible, so E * E<sup>-1</sup> = I. 
 Given EA = R, we also have A = R * E<sup>-1</sup>. So we can use R and E<sup>-1</sup> to reconstruct A.
+
+
+## My implementation
+
+I used code from Henry Minsky who licensed this under the GNU General Public License. I totally lost it while trying to make this, but at least I
+can try to explain this open source Reed Solomon implementation.
+
 
 
 ### References
