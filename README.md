@@ -33,21 +33,23 @@ This is what a potential chunk of encoded Reed Solomonized data might look like:
 | data | data | data |
 | parity | parity | parity |
 
-### Parity Shards
+### Encoding Matrix
 
-The number of parity shards varies based on the number of shards they will do parity for. We generate this chunk by multiplying an encoding matrix
-by 
+The number of parity shards varies based on the number of shards they will do parity for. We generate a chunk of Reed Solomonized data by multiplying 
+an encoding matrix by the data we with to encode. This encoding matrix consists of an identity matrix with additional parity check rows on the bottom.
+This will produce what we are going to store; the actual data and the parity check shards afterwards. It is important to note that the number of parity 
+check shards are smaller than the number of data shards we're storing. This ensures that we are efficitently saving space with our error correcting code.
 
 ### Galois Fields
 
 Galois fields are just a set of integers that can be added, multiplied, divided, you name it, but are always modded by a certain number. This is not
 at all different than what I learned a 'ring' was in other math classes. Mathematicians just want to watch everyone else suffer I guess. Our Galois
 field is just a 'ring' for the number eight. Basically, you can do any operation on any number from zero through seven, and then you just need to 
-modulo eight at the end.
+modulo eight at the end. 
 
 ### Matrix multiplication
 
-To decode, we use matrix multiplication to multiply our chunk by another matrix. 
+To encode and decode, we use matrix multiplication to multiply our chunk by another matrix. 
 
 
 ### References
